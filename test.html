@@ -11,6 +11,43 @@
 	#top{
 		margin-left:20px;
 	}
+a.tooltips {
+	position: relative;
+	display: inline;
+	text-decoration:none; 
+}
+a.tooltips span {
+	position: absolute;
+	width: 140px;
+	color: #FFFFFF;
+	background: #000000;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	display: none;
+	border-radius: 6px;
+}
+a.tooltips span:after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -8px;
+	width: 0;
+	height: 0;
+	border-top: 8px solid #000000;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+a:focus.tooltips span {
+	display: block;
+	opacity: 0.8;
+	bottom: 30px;
+	left: 50%;
+	margin-left: -76px;
+	z-index: 999;
+}
+
 	</style>
 
 	<script language="javascript">
@@ -26,6 +63,9 @@
   		</tr>
 	</table>
 	<hr border-color="gray";>
+
+	<a class="tooltips" href="#">기쁜<span>황홀한</span></a> 벅찬 포근한 흐뭇한 상쾌한 짜릿한 시원한 반가운 후련한 살맛나는 신바람나는 아늑한 흥분되는 <a class="tooltips" href="#">온화한<span>따뜻함</span></a> 안전한 느긋한 끝내주는 <a class="tooltips" href="#">뭉클한<span>슬픔</span></a> 눈물겨운 서운한 처량한 얄미운 열받는 지겨운 못마땅한 권태로운 불쾌한 불만스러운
+
 	</div>
 	</form>
  </body>
