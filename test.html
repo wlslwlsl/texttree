@@ -3,6 +3,8 @@
  <head>
    <meta charset="utf-8">
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css">
 	<style type="text/css">
 	#tdtop{
 		font-size:3em;
@@ -11,13 +13,14 @@
 	#top{
 		margin-left:20px;
 	}
+
 a.tooltips {
 	position: relative;
 	display: inline;
 	text-decoration:none; 
 }
 a.tooltips span {
-	position: absolute;
+	position: relative;
 	width: 140px;
 	color: #FFFFFF;
 	background: #000000;
@@ -29,7 +32,7 @@ a.tooltips span {
 }
 a.tooltips span:after {
 	content: '';
-	position: absolute;
+	position: relative;
 	top: 100%;
 	left: 50%;
 	margin-left: -8px;
@@ -41,16 +44,30 @@ a.tooltips span:after {
 }
 a:focus.tooltips span {
 	display: block;
-	opacity: 0.8;
-	bottom: 30px;
-	left: 50%;
-	margin-left: -76px;
-	z-index: 999;
+
+}
+span.top{
+	position:relative;
+	top:-5px;
+	z-index:1;
+}
+span.right{
+	position:relative;
+	right:5px;
+}
+span.bottom{
+	position:relative;
+	bottom:15px;
 }
 	</style>
 
 	<script language="javascript">
-	
+	function word(){
+		var spanvalue = document.getElementById("click");		
+		spanvalue.innerHTML = "<span class='right' id='hang' title='관련도 : 기쁜, 황홀한 : 관련도 90%' style='CURSOR:hand;'>황홀한</span> <span class='top' id='happy' title='관련도 : 기쁜, top : 관련도 90%' style='CURSOR:hand;'>top</span> <span class='bottom' id='happy' title='관련도 : 기쁜, bottom : 관련도 90%' style='CURSOR:hand;'>bottom</span>";
+		
+	}
+
 	</script>
  </head>
  <body>
@@ -63,7 +80,7 @@ a:focus.tooltips span {
 	</table>
 	<hr border-color="gray";>
 
-	<a class="tooltips" href="#" title="연관 단어 보기">기쁜<span class="list" onclick="list(); return false;" title="관련도 보기">황홀한</span></a> 벅찬 포근한 흐뭇한 상쾌한 짜릿한 시원한 반가운 후련한 살맛나는 신바람나는 아늑한 흥분되는 <a class="tooltips" href="#" title="연관 단어 보기">온화한<span title="관련도 보기">따뜻함</span></a> 안전한 느긋한 끝내주는 <a class="tooltips" href="#" title="연관 단어 보기">뭉클한<span title="관련도 보기">슬픔</span></a> 눈물겨운 서운한 처량한 얄미운 열받는 지겨운 못마땅한 권태로운 불쾌한 불만스러운
+	<a class="tooltips" id="click" href="javascript:void(0)" title="연관 단어 보기" onclick="word()">기쁜</a> 벅찬 포근한 흐뭇한 상쾌한 짜릿한 시원한 반가운 후련한 살맛나는 신바람나는 아늑한 흥분되는 <a class="tooltips" href="#" title="연관 단어 보기">온화한<span title="관련도 보기">따뜻함</span></a> 안전한 느긋한 끝내주는 <a class="tooltips" href="#" title="연관 단어 보기">뭉클한<span title="관련도 보기">슬픔</span></a> 눈물겨운 서운한 처량한 얄미운 열받는 지겨운 못마땅한 권태로운 불쾌한 불만스러운
 
 	</div>
 	</form>
