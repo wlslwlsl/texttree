@@ -1,1 +1,51 @@
-z
+#tdtop{
+	font-size:3em;
+	color:#585858;
+}
+#top{
+	margin-left:20px;
+}
+a.tooltips {
+	position: relative;
+	display: inline;
+	text-decoration:none; 
+}
+a.tooltips span {
+	position: relative;
+	width: 140px;
+	color: #FFFFFF;
+	background: #000000;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	display: none;
+	border-radius: 6px;
+}
+a.tooltips span:after {
+	content: '';
+	position: relative;
+	top: 100%;
+	left: 50%;
+	margin-left: -8px;
+	width: 0;
+	height: 0;
+	border-top: 8px solid #000000;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}
+a:focus.tooltips span {
+	display: block;
+}
+span.top{
+	position:relative;
+	top:-5px;
+	z-index:1;
+}
+span.right{
+	position:relative;
+	right:5px;
+}
+span.bottom{
+	position:relative;
+	bottom:15px;
+}
